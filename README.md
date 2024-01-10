@@ -1,11 +1,12 @@
-# Simulador_de_inversión_virtual_Bancololbia
+# Simulador_de_inversión_virtual
 
 ## ⚙️ Descripción ⚙️
 
-Este proyecto Gradle, el cual se encuentra implementado con el patrón de diseño Screenplay y tiene ejemplo de automatización de para reelizar la simulaión de una inversión virtual en Bancolombia, qla cual se realizan en el portal https://www.bancolombia.com/personas
+Este proyecto Gradle, el cual se encuentra implementado con el patrón de diseño Screenplay y tiene ejemplo de automatización de para reelizar la simulaión de una inversión virtual, el cual se realizan en el portal https://www.bancolombia.com/personas.
+
+Además se diseña el plan de pruebas el cual se encuentra en la ruta src/test/resources/plan_de_pruebas
 
 ## 📦 Pre-requisitos 📦
-
 
 * Java 8 o mayor.
 * Maven para gestión de librerías.
