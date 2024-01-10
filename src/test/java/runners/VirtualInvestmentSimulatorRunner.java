@@ -14,6 +14,6 @@ import org.junit.runner.RunWith;
         monochrome = true
 )
 
-public class ProgramarPresentacion {
+public class VirtualInvestmentSimulatorRunner {
 
 }

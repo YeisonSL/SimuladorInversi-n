@@ -8,10 +8,10 @@ public class HomePeople {
     private HomePeople() {
     }
 
-    public static final Target LI_PRODCTOS_SERVICIOS = Target.the("Opción del menu para despelgar Productos y servicios")
+    public static final Target LI_PRODCTOS_SERVICIOS = Target.the("Opcion del menu para despelgar Productos y servicios")
             .located(By.id("menu-productos"));
 
-    public static final Target LI_INVERSIONES = Target.the("Opción para ingresar a Inversiones")
+    public static final Target LI_INVERSIONES = Target.the("Opcion para ingresar a Inversiones")
             .located(By.id("header-productos-inversiones"));
 
 }

@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public enum Portal {
 
-    PERSONAS_BANCOLOMBIA("https://www.bancolombia.com/personas/productos-servicios/inversiones/cdts/inversion-virtual/simulador-inversion-virtual");
+    PERSONAS_BANCOLOMBIA("https://www.bancolombia.com/personas");
 
     String portal;
 }

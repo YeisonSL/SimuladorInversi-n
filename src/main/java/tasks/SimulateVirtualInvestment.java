@@ -1,6 +1,7 @@
 package tasks;
 
 import interactions.SelectOptionInvestment;
+import interactions.SwitchToNewWindow;
 import lombok.AllArgsConstructor;
 import models.InformationSimulation;
 import net.serenitybdd.screenplay.Actor;
@@ -28,17 +29,20 @@ public class SimulateVirtualInvestment implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-       actor.attemptsTo(Click.on(LI_PRODCTOS_SERVICIOS));
-       actor.attemptsTo(Click.on(LI_INVERSIONES));
-       actor.attemptsTo(SelectOptionInvestment.forType(typeInvestment));
        actor.attemptsTo(
-               Switch.toWindow(TITLE_VIRTUAL_INVESTMENT),
+               Click.on(LI_PRODCTOS_SERVICIOS),
+               Click.on(LI_INVERSIONES),
+               SelectOptionInvestment.forType(typeInvestment),
+               //Switch.toWindow(TITLE_VIRTUAL_INVESTMENT),
+               SwitchToNewWindow.change(),
                WaitUntil.the(BTN_SIMULAR_INVERSION, WebElementStateMatchers.isVisible()),
                Scroll.to(BTN_SIMULAR_INVERSION),
-               net.serenitybdd.screenplay.actions.Click.on(BTN_SIMULAR_INVERSION));
-       actor.attemptsTo(
-               Switch.toWindow(TITLE_SIMULATOR));
-        actor.attemptsTo(EnterSimulationInformation.data(simulationData));
+               net.serenitybdd.screenplay.actions.Click.on(BTN_SIMULAR_INVERSION),
+               //Switch.toWindow(TITLE_SIMULATOR))
+               SwitchToNewWindow.change(),
+               EnterSimulationInformation.data(simulationData)
+       );
+
         if (simulationData.get(ZERO).getRecibirInteres() != null)
             actor.attemptsTo(Click.on(BTN_SIMULAR));
     }

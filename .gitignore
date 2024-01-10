@@ -17,6 +17,7 @@ build/
 .classpath
 .project
 target/
+src/test/resources/report/
 
 # External tool builders
 .externalToolBuilders/

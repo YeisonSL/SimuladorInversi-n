@@ -10,17 +10,16 @@ import net.serenitybdd.screenplay.actions.Open;
 import questions.ValidateReport;
 import tasks.CreateExcelReport;
 import tasks.SimulateVirtualInvestment;
-import utilities.enums.ValidateMessageErrorForType;
 
 import java.util.List;
 
-import static utilities.enums.MensajeConfirmacion.CONFIRMATION_MESSAGE;
+import static utilities.enums.MessageConfirmation.CONFIRMATION_MESSAGE;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.equalTo;
 import static userinterfaces.VirtualSimulator.*;
 import static utilities.constants.Constants.USER;
 import static net.serenitybdd.screenplay.actors.OnStage.theActor;
-import static utilities.enums.MensajeConfirmacion.ERROR_MESSAGE;
+import static utilities.enums.MessageConfirmation.ERROR_MESSAGE;
 
 public class VirtualInvestmentSimulatorSteps {
 
@@ -53,7 +52,7 @@ public class VirtualInvestmentSimulatorSteps {
                         ));
     }
 
-    @Then("el usuario podrá visualizar lel mensaje de error {string}")
+    @Then("el usuario podra visualizar el mensaje de error {string}")
     public void errorMessagesDisplayed(String messageError) {
         theActor(USER)
                 .should(

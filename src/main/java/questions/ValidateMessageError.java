@@ -11,7 +11,7 @@ public class ValidateMessageError implements Question<Boolean> {
     private String messageError;
     @Override
     public Boolean answeredBy(Actor actor) {
-       return ValidateMessageErrorForType.getValidation(messageError).validateMessage(messageError);
+       return ValidateMessageErrorForType.getValidation(messageError).validateMessage(actor);
     }
 
     public static ValidateMessageError forType(String  messageError) {

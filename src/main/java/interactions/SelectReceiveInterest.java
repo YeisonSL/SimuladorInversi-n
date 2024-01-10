@@ -6,7 +6,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 
 import java.util.List;
@@ -21,19 +20,19 @@ public class SelectReceiveInterest implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        if (simulationData.get(ZERO).getRecibirInteres() != null)
+        if (simulationData.get(ZERO).getRecibirInteres() != null || simulationData.get(ZERO).getMantenerPlazo().equals(NO)) {
             actor.attemptsTo(
-                    Scroll.to(BTN_SIMULAR),
-                    Check.whether(simulationData.get(ZERO).getMantenerPlazo().equals(NO))
-                            .andIfSo(Click.on(SELECT_VALUES)),
-                    Check.whether(simulationData.get(ZERO).getRecibirInteres().equals(RECEIVEINTEREST))
+                    Click.on(SELECT_VALUES),
+                    Check.whether(
+                                    simulationData.get(ZERO).getRecibirInteres().equals(RECEIVE_INTEREST))
                             .andIfSo(Click.on(SELECT_MENSUAL))
                             .otherwise(Click.on(SELECT_FINALIZAR_PLAZO))
+
             );
+        }
     }
 
     public static SelectReceiveInterest forType(List<InformationSimulation> simulationData) {
         return Tasks.instrumented(SelectReceiveInterest.class, simulationData);
     }
-
 }
